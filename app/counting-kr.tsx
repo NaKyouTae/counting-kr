@@ -123,55 +123,87 @@ export default function CountingKr() {
     }, [noneSpace, noneSingle, noneSpace, noneEmoji])
 
     return (
-        <div>
-            <textarea onChange={e => counting(e.target.value)} placeholder={"글자 수를 세어 보아요"} rows={10} cols={80} />
-            <div>
-                <label htmlFor="noneSingle">
-                    <input type="checkbox"
-                           id={"noneSingle"}
-                           checked={noneSingle}
-                           onChange={(e) => setNoneSingle(e.target.checked)}
-                           label={"자음, 모음 제외"}
-                    />
-                    자음, 모음 제외
-                </label>
-                <label htmlFor="noneSpecial">
-                    <input type="checkbox"
-                           id={"noneSpecial"}
-                           checked={noneSpecial}
-                           onChange={(e) => setNoneSpecial(e.target.checked)}
-                    />
-                    특수 문자 제외
-                </label>
-                <label htmlFor="noneEmoji">
-                    <input type="checkbox"
-                           id={"noneEmoji"}
-                           checked={noneEmoji}
-                           onChange={(e) => setNoneEmoji(e.target.checked)}
-                    />
-                    이모티콘 제외
-                </label>
-                <label htmlFor="noneSpace">
-                    <input type="checkbox"
-                           id={"noneSpace"}
-                           checked={noneSpace}
-                           onChange={(e) => setNoneSpace(e.target.checked)}
-                    />
-                    공백 제외
-                </label>
+        <div className="container">
+            <div className="header">
+                <div className="title">
+                    <h6>글자 수 세기<p>counting letters</p></h6>
+                </div>
             </div>
-            <div>전체 글자 : {cntKor + cntEng + cntNum + cntSingle + cntSpecial + cntSpace + cntEmoji}</div>
-            <div>글자 : {
-                cntKor
-                + (noneSingle ? 0 : cntSingle)
-                + (noneSpecial ? 0 : cntSpecial)
-                + (noneSpace ? 0 : cntSpace)
-                + (noneEmoji ? 0 : cntEmoji)
-            }</div>
-            <div>자음, 모음 : {cntSingle}</div>
-            <div>특수 문자 : {cntSpecial}</div>
-            <div>이모티콘 : {cntEmoji}</div>
-            <div>공백 : {cntSpace}</div>
+            <div className="contents">
+                <div className="text-count-wrap">
+                    <div className="option">
+                        <h6>옵션 목록</h6>
+                        <ul>
+                            <li><input type="checkbox" id="space" /><label htmlFor="space"><span>공백</span></label></li>
+                            <li><input type="checkbox" id="single" /><label htmlFor="single"><span>자/모음</span></label></li>
+                            <li><input type="checkbox" id="special" /><label htmlFor="special"><span>특수문자(텍스트)</span></label></li>
+                            <li><input type="checkbox" id="emoji" /><label htmlFor="emoji"><span>이모티콘(이모지)</span></label></li>
+                        </ul>
+                    </div>
+                    <ul className="text-count">
+                        <li>
+                            <h6>전체 글자 수</h6>
+                            <p>00</p>
+                        </li>
+                        <li>
+                            <h6>공백 제외<span>(전체 - 공백)</span></h6>
+                            <p>00</p>
+                        </li>
+                        <li>
+                            <h6>옵션 제외<span>(전체 - 선택 옵션 전체)</span></h6>
+                            <p>00</p>
+                        </li>
+                    </ul>
+                </div>
+                <textarea onChange={e => counting(e.target.value)} placeholder={"글자 수를 세어 보아요"} rows={10} cols={80} />
+                <div>
+                    <label htmlFor="noneSingle">
+                        <input type="checkbox"
+                            id={"noneSingle"}
+                            checked={noneSingle}
+                            onChange={(e) => setNoneSingle(e.target.checked)}
+                            placeholder={"자음, 모음 제외"}
+                        />
+                        자음, 모음 제외
+                    </label>
+                    <label htmlFor="noneSpecial">
+                        <input type="checkbox"
+                            id={"noneSpecial"}
+                            checked={noneSpecial}
+                            onChange={(e) => setNoneSpecial(e.target.checked)}
+                        />
+                        특수 문자 제외
+                    </label>
+                    <label htmlFor="noneEmoji">
+                        <input type="checkbox"
+                            id={"noneEmoji"}
+                            checked={noneEmoji}
+                            onChange={(e) => setNoneEmoji(e.target.checked)}
+                        />
+                        이모티콘 제외
+                    </label>
+                    <label htmlFor="noneSpace">
+                        <input type="checkbox"
+                            id={"noneSpace"}
+                            checked={noneSpace}
+                            onChange={(e) => setNoneSpace(e.target.checked)}
+                        />
+                        공백 제외
+                    </label>
+                </div>
+                <div>전체 글자 : {cntKor + cntEng + cntNum + cntSingle + cntSpecial + cntSpace + cntEmoji}</div>
+                <div>글자 : {
+                    cntKor
+                    + (noneSingle ? 0 : cntSingle)
+                    + (noneSpecial ? 0 : cntSpecial)
+                    + (noneSpace ? 0 : cntSpace)
+                    + (noneEmoji ? 0 : cntEmoji)
+                }</div>
+                <div>자음, 모음 : {cntSingle}</div>
+                <div>특수 문자 : {cntSpecial}</div>
+                <div>이모티콘 : {cntEmoji}</div>
+                <div>공백 : {cntSpace}</div>
+            </div>
         </div>
     )
 }

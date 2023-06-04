@@ -1,0 +1,349 @@
+
+/* reset ------------------------------ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* font ------------------------------ */
+
+/* Montserrat */
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-Thin.woff) format('woff');
+    font-weight: 100;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-ThinItalic.woff) format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-ExtraLight.woff) format('woff');
+    font-weight: 200;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-ExtraLightItalic.woff) format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-Light.woff) format('woff');
+    font-weight: 300;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-LightItalic.woff) format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-Regular.woff) format('woff');
+    font-weight: 400;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-Italic.woff) format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-Medium.woff) format('woff');
+    font-weight: 500;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-MediumItalic.woff) format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-SemiBold.woff) format('woff');
+    font-weight: 600;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-SemiBoldItalic.woff) format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-Bold.woff) format('woff');
+    font-weight: 700;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-BoldItalic.woff) format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-ExtraBold.woff) format('woff');
+    font-weight: 800;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-ExtraBoldItalic.woff) format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-Black.woff) format('woff');
+    font-weight: 900;
+    font-style: nomal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./font/Montserrat/Montserrat-BlackItalic.woff) format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* NotoSans */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: url(./font/NotoSans/NotoSansKR-Thin.woff2) format('woff2'),
+    url(./font/NotoSans/NotoSansKR-Thin.woff) format('woff'),
+    url(./font/NotoSans/NotoSansKR-Thin.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url(./font/NotoSans/NotoSansKR-Light.woff2) format('woff2'),
+    url(./font/NotoSans/NotoSansKR-Light.woff) format('woff'),
+    url(./font/NotoSans/NotoSansKR-Light.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./font/NotoSans/NotoSansKR-Regular.woff2) format('woff2'),
+    url(./font/NotoSans/NotoSansKR-Regular.woff) format('woff'),
+    url(./font/NotoSans/NotoSansKR-Regular.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url(./font/NotoSans/NotoSansKR-Medium.woff2) format('woff2'),
+    url(./font/NotoSans/NotoSansKR-Medium.woff) format('woff'),
+    url(./font/NotoSans/NotoSansKR-Medium.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url(./font/NotoSans/NotoSansKR-Bold.woff2) format('woff2'),
+    url(./font/NotoSans/NotoSansKR-Bold.woff) format('woff'),
+    url(./font/NotoSans/NotoSansKR-Bold.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: url(./font/NotoSans/NotoSansKR-Black.woff2) format('woff2'),
+    url(./font/NotoSans/NotoSansKR-Black.woff) format('woff'),
+    url(./font/NotoSans/NotoSansKR-Black.otf) format('opentype');
+}
+
+/* ico ------------------------------ */
+
+/* icon : a b c d e f g h i j k l m n o p q r s t u v w x y z */
+i {display: block; background-repeat: no-repeat; background-position: center; background-size: contain;}
+
+
+/* common ------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* document --------------------------- */
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* web font + system font */
+    font-family: 'Montserrat', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji!important;
+    font-size: 62.5%; /* 1rem = 1rem */
+    font-weight: 400;
+    letter-spacing: -.02em;
+    color: #121212;
+    /* smoothing font */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    transition: color .6s, background-color .6s;
+}
+
+/* typography --------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+b, strong {
+    /* add the correct font weight in Chrome, Edge, and Safari */
+    font-weight: 600;
+}
+
+/* list style --------------------------- */
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* embedded content --------------------------- */
+img {
+    /* remove the border on images inside links in IE 10 */
+    border-style: none;
+}
+
+/* form --------------------------- */
+button, input, textarea, select, option {
+    /* web font + system font */
+    font-family: 'Montserrat', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    /* Remove the inheritance of text transform in Edge, Firefox and IE. */
+    text-transform: none;
+    background-color: transparent;
+    letter-spacing: -.02em;
+    font-weight: 400;
+    /* Show the overflow in Edge and IE. */
+    overflow: visible;
+    cursor: pointer;
+}
+
+button:disabled, input:disabled {
+    cursor: not-allowed;
+}
+
+button, [type='button'], [type='reset'], [type='submit'] {
+    /* correct the inability to style clickable types in iOS and Safari */
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+}
+
+[type='checkbox'], [type='radio'] {
+    /* remove the padding in IE 10 */
+    padding: 0;
+    margin: 0;
+}
+
+textarea {
+    width: 100%;
+    /* remove the default vertical scrollbar in IE 10+ */
+    overflow: auto;
+    resize: none;
+}
+
+/* link --------------------------- */
+a {
+    color: #121212;
+    text-decoration: none;
+    /* remove the gray background on active links in IE 10 */
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a:visited, a:hover, a:active {
+    color: #121212;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #121212;
+    text-decoration: none;
+}
+
+:focus {
+    outline: none;
+}
+
+/* root ----------------------- */
+:root {
+    --black: #121212;
+    --white: #FFFFFF;
+}
+
+
+/* style ------------------------------ */
+.container {display: flex; align-items: center; justify-content: center; flex-flow: column; row-gap: 2.4rem; max-width: 76.8rem; width: 100%; padding: 2.4rem; margin: 0 auto;}
+
+.header {width: 100%; display: flex; align-items: center; column-gap: 1.8rem; border-bottom: 1px solid #121212;}
+.header .title > h6 {font-size: 2.4rem; font-weight: 500; display: flex; align-items: flex-end; column-gap: .6rem;}
+.header .title > h6 > p {font-size: 1.6rem; font-weight: 600;}
+.contents {}
