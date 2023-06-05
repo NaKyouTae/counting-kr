@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 
 export default function CountingKr() {
     const [text, setText] = useState('') // 입력 문자
+    const [word, setWord] = useState('') // 입력 단어
 
     const [cntSpecial, setCntSpecial] = useState(0) // 특수 문자 수
     const [cntKor, setCntKor] = useState(0) // 한글 수
@@ -12,13 +13,14 @@ export default function CountingKr() {
     const [cntSpace, setCntSpace] = useState(0) // 공백 수
     const [cntSingle, setCntSingle] = useState(0) // 자음, 모음 수
     const [cntEmoji, setCntEmoji] = useState(0) // 이모지 수
+    const [cntMatchingWord, setCntMatchingWord] = useState(0) // 매칭 단어 수
 
     const [noneSingle, setNoneSingle] = useState(false) // 자음, 모음 제외
     const [noneSpecial, setNoneSpecial] = useState(false) // 공백 제외
     const [noneSpace, setNoneSpace] = useState(false) // 특수문자 제외
     const [noneEmoji, setNoneEmoji] = useState(false) // 이모티콘 제외
 
-    const counting = (text: string) => {
+    const countingSentence = (text: string) => {
         setText(text)
         let cspi = 0, ck = 0, cn = 0, ce = 0, csk = 0, csp = 0
 
@@ -42,6 +44,8 @@ export default function CountingKr() {
         setCntSpecial(cspi)
         setCntSpace(csp)
         // setTotalCnt(ck + cn + ce + csk + cspi + csp + cntEmoji)
+
+        countingWord(word)
     }
 
     // 특수 문자 체크 (숫자 제외)
@@ -118,8 +122,18 @@ export default function CountingKr() {
         return text
     }
 
+    const countingWord = (newWord: string) => {
+        setWord(newWord)
+
+        const pattern = new RegExp(newWord,'g');
+        const matches = text.match(pattern);
+        const cntMatchingWord = matches ? matches.length : 0
+
+        setCntMatchingWord(cntMatchingWord)
+    }
+
     useEffect(() => {
-        counting(text)
+        countingSentence(text)
     }, [noneSpace, noneSingle, noneSpace, noneEmoji])
 
     return (
@@ -155,7 +169,7 @@ export default function CountingKr() {
                         </li>
                     </ul>
                 </div>
-                <textarea onChange={e => counting(e.target.value)} placeholder={"글자 수를 세어 보아요"} rows={10} cols={80} />
+                <textarea onChange={e => countingSentence(e.target.value)} placeholder={"글자 수를 세어 보아요"} rows={10} cols={80} />
                 <div>
                     <label htmlFor="noneSingle">
                         <input type="checkbox"
@@ -203,6 +217,13 @@ export default function CountingKr() {
                 <div>특수 문자 : {cntSpecial}</div>
                 <div>이모티콘 : {cntEmoji}</div>
                 <div>공백 : {cntSpace}</div>
+            </div>
+            <div>
+                    <input type="text"
+                           onChange={(e) => countingWord(e.target.value)}
+                           placeholder={"단어를 입력하세요."}
+                    />
+                    <div>매칭 단어 수 : {cntMatchingWord}</div>
             </div>
         </div>
     )

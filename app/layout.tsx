@@ -23,6 +23,7 @@ export default function RootLayout({
         <meta property="og:image" content="../public/img/img-opengraph.png" />
         <meta property="og:title" content="글자 수 세기" />
         <meta property="og:description" content="글자 수 세기 :: 한글 영문 공백 특수문자 이모티콘 추가/제외 글자 수 세기" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7943148960429460" crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
