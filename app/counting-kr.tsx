@@ -44,8 +44,6 @@ export default function CountingKr() {
         setCntSpecial(cspi)
         setCntSpace(csp)
         // setTotalCnt(ck + cn + ce + csk + cspi + csp + cntEmoji)
-
-        countingWord(word)
     }
 
     // 특수 문자 체크 (숫자 제외)
@@ -123,18 +121,28 @@ export default function CountingKr() {
     }
 
     const countingWord = (newWord: string) => {
+        if(newWord === '') return
+
         setWord(newWord)
 
-        const pattern = new RegExp(newWord,'g');
-        const matches = text.match(pattern);
-        const cntMatchingWord = matches ? matches.length : 0
+        if(text.length === 0) {
+            setCntMatchingWord(0)
+        }else {
+            const pattern = new RegExp(newWord,'g');
+            const matches = text.match(pattern);
+            const cntMatchingWord = matches ? matches.length : 0
 
-        setCntMatchingWord(cntMatchingWord)
+            setCntMatchingWord(cntMatchingWord)
+        }
     }
 
     useEffect(() => {
         countingSentence(text)
     }, [noneSpace, noneSingle, noneSpace, noneEmoji])
+
+    useEffect(() => {
+        countingWord(word)
+    }, [text])
 
     return (
         <div className="container">
