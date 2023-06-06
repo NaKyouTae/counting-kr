@@ -1,8 +1,7 @@
-import Image from 'next/image'
-import CountingKr from "@/app/counting-kr";
+import CountingLanguage from "@/app/counting-language";
 
 export default function Home() {
   return (
-    <CountingKr />
+    <CountingLanguage />
   )
 }

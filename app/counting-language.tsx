@@ -2,7 +2,7 @@
 
 import {useEffect, useState} from "react";
 
-export default function CountingKr() {
+export default function CountingLanguage() {
     const [text, setText] = useState('') // 입력 문자
     const [word, setWord] = useState('') // 입력 단어
 
