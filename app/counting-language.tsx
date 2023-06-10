@@ -172,30 +172,32 @@ export default function CountingLanguage() {
                     <ul className="count-wrap">
                         <li>
                             <h6>전체 글자 수</h6>
-                            <div><p>{cntKor + cntEng + cntNum + cntSingle + cntSpecial + cntSpace + cntEmoji}</p><span>자</span></div>
+                            <div><p>{cntKor + cntSingle + cntSpecial + cntSpace + cntEmoji}</p><span>자</span></div>
                         </li>
                         <li>
                             <h6>공백 제외<span>(전체 글자 수 - 공백)</span></h6>
-                            <div><p>{cntKor + cntEng + cntNum + cntSingle + cntSpecial + cntEmoji}</p><span>자</span></div>
+                            <div><p>
+                                {
+                                    cntKor
+                                    + (noneSingle ? 0 : cntSingle)
+                                    + (noneSpecial ? 0 : cntSpecial)
+                                    + (noneEmoji ? 0 : cntEmoji)
+                                }
+                            </p><span>자</span></div>
                         </li>
                         <li>
                             <h6>선택 옵션 제외<span>(전체 글자 수 - 선택 옵션)</span></h6>
-                            <div><p>{cntKor + cntEng + cntNum + cntSingle + cntSpecial + cntEmoji}</p><span>자</span></div>
+                            <div><p>
+                                {
+                                    cntKor
+                                    + (noneSingle ? 0 : cntSingle)
+                                    + (noneSpecial ? 0 : cntSpecial)
+                                    + (noneSpace ? 0 : cntSpace)
+                                    + (noneEmoji ? 0 : cntEmoji)
+                                }
+                            </p><span>자</span></div>
                         </li>
                     </ul>
-                    {/* <div>
-                        글자 : {
-                            cntKor
-                            + (noneSingle ? 0 : cntSingle)
-                            + (noneSpecial ? 0 : cntSpecial)
-                            + (noneSpace ? 0 : cntSpace)
-                            + (noneEmoji ? 0 : cntEmoji)
-                        }
-                    </div>
-                    <div>자음, 모음 : {cntSingle}</div>
-                    <div>특수 문자 : {cntSpecial}</div>
-                    <div>이모티콘 : {cntEmoji}</div>
-                    <div>공백 : {cntSpace}</div> */}
                 </div>
                 <div className="box">
                     <div className="title">
