@@ -177,12 +177,7 @@ export default function CountingLanguage() {
                         <li>
                             <h6>공백 제외<span>(전체 글자 수 - 공백)</span></h6>
                             <div><p>
-                                {
-                                    cntKor
-                                    + (noneSingle ? 0 : cntSingle)
-                                    + (noneSpecial ? 0 : cntSpecial)
-                                    + (noneEmoji ? 0 : cntEmoji)
-                                }
+                                {cntKor + cntSingle + cntSpecial + cntEmoji}
                             </p><span>자</span></div>
                         </li>
                         <li>
