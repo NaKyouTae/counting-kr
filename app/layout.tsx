@@ -23,7 +23,7 @@ export default function RootLayout({
       <head>
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="wordscount.kr" />
+        <meta property="og:url" content="" />
         <meta property="og:image" content="../images/opengraph.png" />
         <meta property="og:title" content="글자 수 세기" />
         <meta property="og:description" content="블로그 체험단 자기소개서 이력서" />
