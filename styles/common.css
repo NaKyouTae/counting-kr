@@ -1,0 +1,149 @@
+/* root ----------------------- */
+:root {
+    --black: #121212;
+    --white: #FDFDFE;
+
+    --green: #27AE60;
+    --red: #FC0019;
+    --blue: #0A58A5;
+    --yellow: #FFB904;
+
+    --gray600: #333333;
+    --gray500: #4F4F4F;
+    --gray400: #828282;
+    --gray300: #E4E4E4;
+    --gray200: #F4F4F4;
+    --gray100: #F6F6F6;
+}
+
+
+/* document --------------------------- */
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* web font + system font */
+    font-family: 'Poppins', 'Pretendard', -apple-system, BlinkMacSystemFont, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji!important;
+    font-size: 62.5%; /* 1rem = 1rem */
+    font-weight: 400;
+    color: var(--black);
+    /* smoothing font */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    transition: color .6s, background-color .6s;
+}
+
+/* typography --------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+b, strong {
+    /* add the correct font weight in Chrome, Edge, and Safari */
+    font-weight: 600;
+}
+
+/* list style --------------------------- */
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* embedded content --------------------------- */
+img {
+    /* remove the border on images inside links in IE 10 */
+    border-style: none;
+}
+
+/* form --------------------------- */
+button, input, textarea, select, option {
+    /* web font + system font */
+    font-family: 'Poppins', 'Pretendard', -apple-system, BlinkMacSystemFont, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji!important;
+    /* Remove the inheritance of text transform in Edge, Firefox and IE. */
+    text-transform: none;
+    background-color: transparent;
+    font-weight: 400;
+    /* Show the overflow in Edge and IE. */
+    overflow: visible;
+    cursor: pointer;
+}
+
+button:disabled, input:disabled {
+    cursor: not-allowed;
+}
+
+button, [type='button'], [type='reset'], [type='submit'] {
+    /* correct the inability to style clickable types in iOS and Safari */
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+}
+
+[type='checkbox'], [type='radio'] {
+    /* remove the padding in IE 10 */
+    padding: 0;
+    margin: 0;
+}
+
+textarea {
+    width: 100%;
+    /* remove the default vertical scrollbar in IE 10+ */
+    overflow: auto;
+    resize: none;
+}
+
+/* link --------------------------- */
+a {
+    color: var(--black);
+    text-decoration: none;
+    /* remove the gray background on active links in IE 10 */
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a:visited, a:hover, a:active {
+    color: #121212;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #121212;
+    text-decoration: none;
+}
+
+:focus {
+    outline: none;
+}
+
+/* common ------------------------------ */
+input {width: 100%; height: 3.6rem; padding: 0 1.2rem; border-radius: .6rem; border: 1px solid var(--gray300); font-size: 1.4rem; cursor: auto;}
+input::placeholder {color: var(--gray400);}
+
+input[type="checkbox"] {display: none;}
+input[type="checkbox"] + label {width: 100%; height: 3.6rem; display: flex; align-items: center;  justify-content: center; border-radius: .6rem; border: 1px solid var(--gray200); background-color: var(--gray200); cursor: pointer;}
+input[type="checkbox"] + label > span {font-size: 1.4rem; font-weight: 500; color: var(--gray400);}
+input[type="checkbox"]:checked + label {border-color: var(--green);}
+input[type="checkbox"]:checked + label > span {font-weight: 600; color: var(--green);}
+
+textarea {width: 100%; height: 30rem; border-radius: .6rem; border: 1px solid var(--gray300); padding: 1.6rem 2rem; font-size: 1.4rem; color: var(--black); line-height: 1.8; cursor: auto;}
+textarea::placeholder {color: var(--gray400);}
+
+.box + .box {margin-top: 3.2rem;}
+
+.box .title {display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.6rem;}
+.box .title > h4 {display: flex; align-items: center; column-gap: .4rem; font-size: 1.8rem;}
+.box .title > h4 > p {font-size: 1.4rem;}
+.box .title > div {display: flex; align-items: center; column-gap: .4rem;}
+.box .title > div > p {font-size: 1.8rem; font-weight: 700; color: var(--green);}
+.box .title > div > span {font-size: 1.4rem;}
