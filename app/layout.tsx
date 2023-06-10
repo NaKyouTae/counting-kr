@@ -24,7 +24,7 @@ export default function RootLayout({
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="" />
-        <meta property="og:image" content="../images/opengraph.png" />
+        <meta property="og:image" content="/images/opengraph.png" />
         <meta property="og:title" content="글자 수 세기" />
         <meta property="og:description" content="블로그 체험단 자기소개서 이력서" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7943148960429460" crossOrigin="anonymous"></script>
