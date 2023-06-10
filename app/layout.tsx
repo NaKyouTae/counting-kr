@@ -28,6 +28,8 @@ export default function RootLayout({
         <meta property="og:title" content="글자 수 세기" />
         <meta property="og:description" content="블로그 체험단 자기소개서 이력서" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7943148960429460" crossOrigin="anonymous"></script>
+        {/* Page Description */}
+        <meta name="description" content="블로그, 체험단, 자기소개서, 이력서 등에 활용 가능한 글자 수 세기입니다." />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
