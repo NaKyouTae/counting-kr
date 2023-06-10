@@ -107,9 +107,11 @@ export default function CountingLanguage() {
 
     // 이모티콘 체크
     const checkEmoji = (text: string): string => {
+        const regExp = /[a-zA-Z]|[0-9]|[가-힣]|[ㄱ-ㅎㅏ-ㅣ]|[!?@#$%^&*():;+=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]+/g;
+        const replaceText = text.replace(regExp, '')
         const splitter = new GraphemeSplitter();
-
-        setCntEmoji(splitter.countGraphemes(text))
+        const cnt = splitter.countGraphemes(replaceText)
+        setCntEmoji(cnt)
 
         return text
     }
