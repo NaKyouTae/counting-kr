@@ -8,13 +8,20 @@
     --blue: #0A58A5;
     --yellow: #FFB904;
 
-    --gray600: #333333;
-    --gray500: #4F4F4F;
-    --gray400: #828282;
-    --gray300: #E4E4E4;
-    --gray200: #F4F4F4;
-    --gray100: #F6F6F6;
+    --gray300: #828282;
+    --gray200: #E4E4E4;
+    --gray100: #F4F4F4;
 }
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --black: #FDFDFE;
+        --white: #1E1E20;;
+    
+        --gray200: #4F4F4F;
+        --gray100: #333333;
+    }
+  }
 
 /* style ------------------------------ */
 .container {max-width: 76.8rem; width: 100%; min-height: 100%; padding: 3rem 4rem; margin: 0 auto; display: flex; flex-flow: column;}
@@ -41,11 +48,11 @@
     .check-wrap > li {min-width: auto; width: 100%;}  
 }
 
-.count-wrap {display: flex; align-items: center; border-radius: .6rem; border: 1px solid var(--gray300);}
+.count-wrap {display: flex; align-items: center; border-radius: .6rem; border: 1px solid var(--gray200);}
 .count-wrap > li {width: calc(100% / 3); height: 12rem; padding: 2rem 1.6rem 2rem 2rem; display: flex; flex-flow: column; justify-content: space-between;}
-.count-wrap > li + li {border-left: 1px solid var(--gray300);}
+.count-wrap > li + li {border-left: 1px solid var(--gray200);}
 .count-wrap > li > h6 {display: flex; flex-flow: column; row-gap: .6rem; font-size: 1.4rem; font-weight: 500;}
-.count-wrap > li > h6 > span {font-size: 1.2rem; font-weight: 500; color: var(--gray400);}
+.count-wrap > li > h6 > span {font-size: 1.2rem; font-weight: 500; color: var(--gray300);}
 .count-wrap > li > div {margin-left: auto; display: flex; align-items: flex-end; column-gap: .6rem;}
 .count-wrap > li > div > p {font-size: 3.6rem; font-weight: 700;}
 .count-wrap > li > div > span {font-size: 1.4rem; font-weight: 500;}
@@ -53,10 +60,10 @@
 @media screen and (max-width: 767px) {
     .count-wrap {flex-flow: column;}
     .count-wrap > li {width: 100%; height: 6.4rem; padding: 1.4rem 1.2rem 1.4rem 1.4rem; flex-flow: initial;}
-    .count-wrap > li + li {border-left: 0; border-top: 1px solid var(--gray300);}
+    .count-wrap > li + li {border-left: 0; border-top: 1px solid var(--gray200);}
     .count-wrap > li > div {margin-left: initial; align-self: flex-end;}
     .count-wrap > li > div > p {font-size: 3.2rem;}
 }
 
 .footer {display: flex; align-items: center; justify-content: center; margin-top: auto; padding-top: 10rem;}
-.footer > p {font-size: 1.2rem; color: var(--gray400);}
+.footer > p {font-size: 1.2rem; color: var(--gray300);}
