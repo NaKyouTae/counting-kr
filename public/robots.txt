@@ -1,2 +1,10 @@
+# *
 User-agent: *
 Allow: /
+Disallow: /exclude
+
+# Host
+Host: https://wordscount.kr
+
+# Sitemaps
+Sitemap: https://wordscount.kr/sitemap.xml
