@@ -27,6 +27,8 @@ export default function RootLayout({
         <meta property="og:image" content="/images/opengraph.png" />
         <meta property="og:title" content="글자 수 세기" />
         <meta property="og:description" content="블로그 체험단 자기소개서 이력서" />
+        {/* 네이버 소유 확인용 메타 태크 */}
+        <meta name="naver-site-verification" content="0ad57945475d97a7b3094f46d6a036700e6b1133" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7943148960429460" crossOrigin="anonymous"></script>
         {/* Page Description */}
         <meta name="description" content="블로그, 체험단, 자기소개서, 이력서 등에 활용 가능한 글자 수 세기입니다." />
