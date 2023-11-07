@@ -1,36 +1,37 @@
-import fs from 'fs';
 import { Feed } from 'feed';
-import { getSortedPost } from './mdx';
+import { writeFileSync } from 'fs';
+import {Author, Category, Enclosure, Extension} from "feed/src/typings";
 
-export default async function generateRssFeed() {
-    const allPosts = await getSortedPost();
-    const site_url = 'https::/wordscount.kr';
+const siteUrl = 'https://wordscount.kr/';
 
-    const feedOptions = {
-        title: 'Words Count | RSS Feed',
-        description: 'Welcome to this Words Count!',
-        id: site_url,
-        link: site_url,
-        image: `${site_url}/images/opengraph.png`,
-        favicon: `${site_url}/favicon.png`,
-        copyright: `All rights reserved ${new Date().getFullYear()}, Ibas`,
-        generator: 'Feed for Node.js',
-        feedLinks: {
-            rss2: `${site_url}/rss.xml`,
-        },
-    };
+const master = {
+    name: 'kevin',
+    email: 'qppk@naver.com',
+    link: siteUrl,
+};
 
-    const feed = new Feed(feedOptions);
+export const feed = new Feed({
+    title: '글자 수 세기',
+    description: '문자, 특수 문자, 이모티콘의 개수를 세는 사이트',
+    id: siteUrl,
+    link: siteUrl,
+    language: 'ko',
+    image: `${siteUrl}/images/base.jpg`,
+    favicon: `${siteUrl}/favicon.ico`,
+    copyright: `All rights reserved since 2023, ${master.name}`,
+    generator: 'generate-rss',
+    feedLinks: {
+        json: `${siteUrl}/json`,
+        atom: `${siteUrl}/atom`,
+    },
+    author: master,
+});
 
-    allPosts.forEach((post) => {
-        feed.addItem({
-            title: post.title,
-            id: `${site_url}/blog/${post.slug}`,
-            link: `${site_url}/blog/${post.slug}`,
-            description: post.description,
-            date: new Date(post.date),
-        });
-    });
+feed.addCategory('Utility');
 
-    fs.writeFileSync('./public/rss.xml', feed.rss2());
-}
+// Output: RSS 2.0
+writeFileSync('out/rss.xml', feed.rss2(), 'utf-8');
+// Output: Atom 1.0
+writeFileSync('out/rss-atom.xml', feed.atom1(), 'utf-8');
+// Output: JSON Feed 1.0
+writeFileSync('out/feed.json', feed.json1(), 'utf-8');
