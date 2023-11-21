@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && npm run rss",
+    "build": "npm run rss && next build && next export",
     "start": "next build && next start",
     "lint": "next lint",
     "postbuild": "next-sitemap",
-    "rss": "ts-node --project tsconfig.node.json ./scripts/generate-rss.ts"
+    "rss": "ts-node --project tsconfig.json ./scripts/generate-rss.ts"
   },
   "dependencies": {
     "@types/node": "20.2.5",
