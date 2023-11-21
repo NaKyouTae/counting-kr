@@ -198,6 +198,31 @@ export default function CountingLanguage() {
                     <input type="text" placeholder="반복 횟수를 확인할 키워드를 입력해 주세요." onChange={(e) => countingWord(e.target.value)} />
                 </div>
             </div>
+            <div className="box">
+                <div className="title" style={{marginTop: '20px'}}>
+                    <h4>글자 수 세기 후기!</h4>
+                </div>
+                <div style={{fontSize: '15px', lineHeight: '22px'}}>
+                    <p>글자수 세기 기능을 만든 과정은 다음과 같습니다.</p>
+                    <p>먼저, React 컴포넌트인 CountingLanguage를 작성하고, 필요한 상태 변수를 useState 훅을 사용하여 선언하였습니다. <br />
+                        입력 문자열을 담을 text 변수와 입력 단어를 담을 word 변수, 그리고 각각의 문자 종류별로 개수를 세기 위한 변수들을 선언하였습니다.</p>
+                    <p>그 후, 입력된 텍스트로부터 각 문자 종류의 개수를 세는 countingSentence 함수를 작성하였습니다. <br />
+                        이 함수는 입력된 텍스트를 받아와서 특수 문자, 한글, 영어, 숫자, 공백, 자음/모음, 이모지의 개수를 세는 과정을 거칩니다. <br />
+                        정규식을 사용하여 각 문자 종류를 체크하고, 해당하는 변수에 개수를 더해주었습니다.</p>
+                    <p>또한, 이모지 개수를 세는 checkEmoji 함수를 작성하였습니다. <br />
+                        입력된 텍스트에서 이모지를 제외한 문자열을 추출한 뒤, GraphemeSplitter를 사용하여 그래프임 개수를 세어 이모지의 개수를 구하였습니다.</p>
+                    <p>또한, 입력된 단어와 텍스트에서 해당 단어의 반복 횟수를 세는 countingWord 함수를 작성하였습니다. <br />
+                        입력된 단어가 비어있을 경우에는 반복 횟수를 0으로 설정하고, 그렇지 않은 경우에는 정규식을 사용하여 해당 단어의 반복 횟수를 구하였습니다.</p>
+                    <p>마지막으로, useEffect 훅을 사용하여 상태 변수의 변화에 따라 필요한 함수들을 호출하도록 설정하였습니다. <br />
+                        noneSpace, noneSingle, noneSpecial, noneEmoji 변수의 변화에 따라 countingSentence 함수가 호출되고, text 변수의 변화에 따라 countingWord 함수가 호출되도록 하였습니다.</p>
+                    <p>이렇게 작성된 CountingLanguage 컴포넌트는 입력된 텍스트의 글자 수를 세고, 선택된 옵션에 따라 필요한 문자 종류를 제외한 글자 수를 계산하며, 입력된 단어의 반복 횟수를 세는 기능을 제공합니다.</p>
+                    <p>참고로, 글자수 세기 기능을 테스트하기 위해 공백을 제외한 1600자의 텍스트를 제공해주셨는데, 해당 텍스트를 알려주셔서 감사합니다. 하지만, 현재 상황에서는 텍스트를 직접 입력하여 테스트해야 합니다. <br />
+                        텍스트를 입력하고 원하는 옵션을 선택한 후에 결과를 확인할 수 있습니다.</p>
+                    <p>
+                        email: qppk@naver.com <br /> <br />
+                    </p>
+                </div>
+            </div>
             <div className="footer">
                 <p>development of kevin</p>
             </div>
